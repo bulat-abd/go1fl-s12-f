@@ -7,6 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install modules
+        run: go mod tidy
+
       - name: Run Unit Tests
         run: GOOS=linux GOARCH=amd64 go test
 
